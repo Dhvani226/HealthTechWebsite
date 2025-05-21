@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            width: 80%;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .form-section, .hospital-section {
+            padding: 20px;
+            width: 50%;
+        }
+        .form-section {
+            background-color: #e0f7fa;
+        }
+        .hospital-section {
+            background-color: #ffffff;
+            border-left: 1px solid #ccc;
+        }
+        .form-section h2, .hospital-section h2 {
+            margin-bottom: 20px;
+        }
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-section form label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-section form input, .form-section form select, .form-section form textarea, .form-section form button {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-section form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .hospital-section select {
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .hospital-info {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function updateDoctors() {
+            const department = document.getElementById('department').value;
+            const doctors = {
+                cardiology: ['Dr. patel', 'Dr. Nikhil'],
+                orthopedics: ['Dr. Gulati', 'Dr. Sachin'],
+                neurology: ['Dr. Vishva', 'Dr. Nisha']
+            };
+
+            const doctorSelect = document.getElementById('doctor');
+            doctorSelect.innerHTML = '';
+
+            if (department in doctors) {
+                doctors[department].forEach(doctor => {
+                    const option = document.createElement('option');
+                    option.value = doctor;
+                    option.textContent = doctor;
+                    doctorSelect.appendChild(option);
+                });:
+            } else {
+                const option = document.createElement('option');
+                option.value = '';
+                option.textContent = 'Select a department first';
+                doctorSelect.appendChild(option);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h2>Book an Appointment</h2>
+            <form>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Preferred Time:</label>
+                 <select name="time-slot" id="">
+                    <option value="select">Select</option>
+                    <option value="select">9:00 to 9:30</option>
+                    <option value="select">9:30 to 10:00</option>
+                    <option value="select">10:00 to 10:30</option>
+                    <option value="select">10:30 to 11:00</option>
+                    <option value="select">11:00 to 11:30</option>
+                    <option value="select">11:30 to 12:00</option>
+                    <option value="select">12:00 to 12:30</option>
+                    <option value="select">12:30 to 1:00</option>
+                    <option value="select">1:00 to 1:30</option>
+                    <option value="select">1:30 to 2:00</option>
+                    <option value="select">2:00 to 2:30</option>
+                    <option value="select">2:30 to 3:00</option>
+                    <option value="select">3:00 to 3:30</option>
+                    <option value="select">3:30 to 4:00</option>
+                    <option value="select">4:00 to 4:30</option>
+                    <option value="select">4:30 to 5:00</option>
+                 </select>
+
+                <label for="department">Department:</label>
+                <select id="department" name="department" onchange="updateDoctors()" required>
+                    <option value="">Select Department</option>
+                    <option value="cardiology">dermatologist</option>
+                    <option value="orthopedics">Orthopedics</option>
+                    <option value="neurology">Neurology</option>
+                </select>
+
+                <label for="doctor">Doctor:</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">Select a department first</option>
+                </select>
+
+                <label for="message">Additional Information about diseases</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="hospital-section">
+            <h2>Select Hospital</h2>
+            <select id="hospital" name="hospital">
+                <option value="hospital1"> </option>
+                <option value="hospital2">Apollo Hospital</option>
+                <option value="hospital3">Zydus Hospital</option>
+                <option value="hospital4">CIMS Hospital</option>
+            </select>
+            <div class="hospital-info">
+                <p><strong>Hospital Information:</strong></p>
+                <p>Select a hospital to see the details.</p>
+            </div>
+        </div>
+    </div>
+    <a href="c.html">Go to Page 2</a>
+</body>
+</html>

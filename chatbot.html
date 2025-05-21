@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Info - Curafast</title>
+    <link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h1>Curafast</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="c.html">Home</a></li>
+    
+            <li><a href="chatbot.html">Chatbot</a></li>
+            <li><a href="c3.html">Appointment</a></li>
+            <li><a href="medicine-info.html">Medicine Info</a></li>
+           
+        </ul>
+        <a href="#" class="cta">Get A Quote</a>
+    </nav>
+
+    <!-- Medicine Info Section -->
+    <header class="medicine-header">
+        <div class="header-content">
+            <h2>Find Information About Medicines</h2>
+            <p>Enter your query about a medicine, and get detailed information with the help of our AI chatbot.</p>
+        </div>
+    </header>
+
+    <!-- AI Chatbot Section -->
+    <section id="chatbot-section" class="section chatbot-section">
+        <h3>Ask About Medicines</h3>
+        <div id="chatbot-container">
+            <div id="chatbot">
+                <div id="chatbox">
+                    <div id="chat-log"></div>
+                </div>
+                <input type="text" id="user-input" placeholder="Type your question here..." onkeydown="if(event.key === 'Enter') sendMessage()">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Curafast. All rights reserved.</p>
+    </footer>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
